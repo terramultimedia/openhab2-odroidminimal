@@ -30,3 +30,12 @@ adduser mosquitto
 sudo make all
 sudo make install
 sudo ldconfig
+
+# Installing Docu here: http://docs.openhab.org/installation/linux.html
+echo "Finally Installing openhab2"
+wget -qO - 'https://bintray.com/user/downloadSubjectPublicKey?username=openhab' | sudo apt-key add -
+# BETAS:
+echo 'deb http://dl.bintray.com/openhab/apt-repo2 testing main' | sudo tee /etc/apt/sources.list.d/openhab2.list
+
+apt-get update
+apt-get install openhab2
